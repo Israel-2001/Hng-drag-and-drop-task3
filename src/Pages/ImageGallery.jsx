@@ -125,7 +125,7 @@ function App() {
       <h1 className='mt-3 text-center text-white text-3xl font-semibold'>Image Gallery</h1>
       <ul 
         ref={sortableContainer}
-        className='grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 
+        className='sm:grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 
         xl:grid-cols-3 justify-center items-center'  
       >
         {initialImages.map((image, index) => {
