@@ -104,7 +104,7 @@ function App() {
 
   return (
     <div>
-      <div className="relative w-full flex justify-between items-center">
+      <div className="w-full flex flex-col justify-between items-center">
         <input
           type="text"
           placeholder="Search by tag..."
