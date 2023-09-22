@@ -110,7 +110,7 @@ function App() {
           placeholder="Search by tag..."
           value={searchTerm}
           onChange={handleSearchChange}
-          className="block w-full p-2 pl-3 text-sm border border-gray-300 rounded-lg text-gray-50 bg-gray-50 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+          className="w-full p-2 pl-3 text-sm border border-gray-300 rounded-lg text-gray-50 bg-gray-50 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
         />
         <p onClick={onLogout} 
                 className="text-white-500 
