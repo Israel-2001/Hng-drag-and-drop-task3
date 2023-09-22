@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import import { getAuth } from "firebase/auth";, { useState } from 'react';
+
 import Sortable from 'sortablejs';
 
 // Sample image data
@@ -67,8 +68,13 @@ import Sortable from 'sortablejs';
   ];
 
 function App() {
+  const auth = getAuth()
   const [images, setImages] = useState(initialImages);
   const [searchTerm, setSearchTerm] = useState('');
+  function onLogout() {
+    auth.signOut()
+    navigate("/")
+  }
 
   // Initialize sortable.js
   const sortableContainer = React.createRef();
@@ -97,7 +103,7 @@ function App() {
 
   return (
     <div>
-      <div className="relative w-full">
+      <div className="relative w-full flex justify-between items-center">
         <input
           type="text"
           placeholder="Search by tag..."
@@ -105,6 +111,15 @@ function App() {
           onChange={handleSearchChange}
           className="block w-full p-2 pl-3 text-sm border border-gray-300 rounded-lg text-gray-50 bg-gray-50 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
         />
+        <p onClick={onLogout} 
+                className="text-white-500 
+                text-blue-700 font-semibold
+                font-sm
+                transition duration-200 ease-in-out
+                cursor-pointer"
+              >
+                Sign-out
+              </p>
       </div>
       <h1 className='mt-3 text-center text-white text-3xl font-semibold'>Image Gallery</h1>
       <ul 
