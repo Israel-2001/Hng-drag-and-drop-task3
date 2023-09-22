@@ -117,7 +117,7 @@ function App() {
         />
         <p 
           onClick={onLogout} 
-          className="text-white w-28 bg-gray-700 text-center rounded p-2 font-semibold font-sm transition duration-200 ease-in-out cursor-pointer"
+          className="text-white w-28 bg-amber-400 text-center rounded p-2 font-semibold font-sm transition duration-200 ease-in-out cursor-pointer"
         >
           Sign-out
         </p>
