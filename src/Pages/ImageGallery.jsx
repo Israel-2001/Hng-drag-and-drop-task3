@@ -106,7 +106,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="bg-amber-400">
       <div className="relative space-x-3 px-3 py-3 w-full flex justify-between items-center">
         <input
           type="text"
