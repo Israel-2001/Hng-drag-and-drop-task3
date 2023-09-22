@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import import { getAuth } from "firebase/auth";, { useState } from 'react';
-
+import React, { useState } from 'react';
+import { useNavigate } from "react-router";
+import { getAuth } from "firebase/auth";
 import Sortable from 'sortablejs';
+
 
 // Sample image data
     const initialImages = [
@@ -9,7 +10,7 @@ import Sortable from 'sortablejs';
       id: 1, 
       url: 'https://images.unsplash.com/photo-1694845479853-c9721af5a191?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxN3x8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60', 
       title: 'Train',
-      tags:'Train'
+      tags:'Engineering'
     },
     { 
       id: 2, 
@@ -27,58 +28,60 @@ import Sortable from 'sortablejs';
       id: 4, 
       url: 'https://images.unsplash.com/photo-1691135319989-8ae7dd70571a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMnx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60', 
       title: 'Car',
-      tags: 'car'
+      tags: 'Engineering'
     },
     { 
       id: 5, 
       url: 'https://images.unsplash.com/photo-1682687982093-4773cb0dbc2e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=700&q=60', 
       title: 'Desert',
-      tags: 'desert'
+      tags: 'Places'
     },
     { 
       id: 6, 
       url: 'https://images.unsplash.com/photo-1694817322913-2aab0898c577?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=700&q=60', 
       title: 'Sculpture',
-      tags: 'sculpture'
+      tags: 'Art'
     },
     { 
       id: 7, 
       url: 'https://images.unsplash.com/photo-1694843690023-3d936b2e83b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=700&q=60', 
       title: 'Broken bottle',
-      tags: 'broken bottle'
+      tags: 'bottles'
     },
     { 
       id: 8, 
       url: 'https://plus.unsplash.com/premium_photo-1694124534101-444a039aee89?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=700&q=60', 
       title: 'Art',
-      tags: 'art'
+      tags: 'Image'
     },
     { 
       id: 9, 
       url: 'https://images.unsplash.com/photo-1695026513693-451e1aac043f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80', 
       title: 'Art',
-      tags: 'art'
+      tags: 'Image'
     },
     { 
       id: 10, 
       url: 'https://images.unsplash.com/photo-1695051626405-e6a288c882d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw3fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=700&q=60',
       title: 'Brick',
-      tags: 'brick'
+      tags: 'Art'
     },
     // Add more images here
   ];
 
 function App() {
-  const auth = getAuth()
   const [images, setImages] = useState(initialImages);
   const [searchTerm, setSearchTerm] = useState('');
-  function onLogout() {
-    auth.signOut()
-    navigate("/")
-  }
+  const auth = getAuth()
+  const navigate = useNavigate()
+  
 
   // Initialize sortable.js
   const sortableContainer = React.createRef();
+    function onLogout() {
+    auth.signOut()
+    navigate("/")
+  }
 
   React.useEffect(() => {
     const container = sortableContainer.current;
@@ -104,7 +107,7 @@ function App() {
 
   return (
     <div>
-      <div className="w-full flex flex-col justify-between items-center">
+      <div className="relative space-x-3 px-3 py-3 w-full flex justify-between items-center">
         <input
           type="text"
           placeholder="Search by tag..."
@@ -112,20 +115,17 @@ function App() {
           onChange={handleSearchChange}
           className="w-full p-2 pl-3 text-sm border border-gray-300 rounded-lg text-gray-50 bg-gray-50 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
         />
-        <p onClick={onLogout} 
-                className="text-white-500 
-                text-blue-700 font-semibold
-                font-sm
-                transition duration-200 ease-in-out
-                cursor-pointer"
-              >
-                Sign-out
-              </p>
+        <p 
+          onClick={onLogout} 
+          className="text-white w-28 bg-gray-700 text-center rounded p-2 font-semibold font-sm transition duration-200 ease-in-out cursor-pointer"
+        >
+          Sign-out
+        </p>
       </div>
       <h1 className='mt-3 text-center text-white text-3xl font-semibold'>Image Gallery</h1>
       <ul 
         ref={sortableContainer}
-        className='sm:grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 
+        className='grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 
         xl:grid-cols-3 justify-center items-center'  
       >
         {initialImages.map((image, index) => {
