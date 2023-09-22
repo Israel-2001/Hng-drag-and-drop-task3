@@ -10,7 +10,7 @@ import Sortable from 'sortablejs';
       id: 1, 
       url: 'https://images.unsplash.com/photo-1694845479853-c9721af5a191?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxN3x8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60', 
       title: 'Train',
-      tags:'Engineering'
+      tags:'Train'
     },
     { 
       id: 2, 
@@ -28,43 +28,43 @@ import Sortable from 'sortablejs';
       id: 4, 
       url: 'https://images.unsplash.com/photo-1691135319989-8ae7dd70571a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMnx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60', 
       title: 'Car',
-      tags: 'Engineering'
+      tags: 'car'
     },
     { 
       id: 5, 
       url: 'https://images.unsplash.com/photo-1682687982093-4773cb0dbc2e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=700&q=60', 
       title: 'Desert',
-      tags: 'Places'
+      tags: 'desert'
     },
     { 
       id: 6, 
       url: 'https://images.unsplash.com/photo-1694817322913-2aab0898c577?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=700&q=60', 
       title: 'Sculpture',
-      tags: 'Art'
+      tags: 'sculpture '
     },
     { 
       id: 7, 
       url: 'https://images.unsplash.com/photo-1694843690023-3d936b2e83b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=700&q=60', 
       title: 'Broken bottle',
-      tags: 'bottles'
+      tags: 'broken bottle'
     },
     { 
       id: 8, 
       url: 'https://plus.unsplash.com/premium_photo-1694124534101-444a039aee89?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=700&q=60', 
       title: 'Art',
-      tags: 'Image'
+      tags: 'art'
     },
     { 
       id: 9, 
       url: 'https://images.unsplash.com/photo-1695026513693-451e1aac043f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80', 
       title: 'Art',
-      tags: 'Image'
+      tags: 'art'
     },
     { 
       id: 10, 
       url: 'https://images.unsplash.com/photo-1695051626405-e6a288c882d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw3fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=700&q=60',
       title: 'Brick',
-      tags: 'Art'
+      tags: 'brick'
     },
     // Add more images here
   ];
