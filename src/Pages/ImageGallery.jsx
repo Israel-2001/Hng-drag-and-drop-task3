@@ -139,7 +139,7 @@ function App() {
                   <img 
                     src={image.url} 
                     alt={`Image ${index}`}
-                    className="rounded-[15px] w-full h-[50%]"
+                    className="rounded-[15px] w-full h-[500px]"
                   />
                  <p className='relative bottom-16 uppercase text-center py-2 px-6 bg-amber-400 w-48 rounded mx-auto text-lg font-medium'>{image.title}</p>
                 </div>
