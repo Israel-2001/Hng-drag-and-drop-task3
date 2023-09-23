@@ -134,7 +134,7 @@ function App() {
           ) {
             return (
               <li className="mx-8 mb-6 px-2" key={image.id}>
-                <div className="bg-gray-900 pb-3 my-5 mx-5 text-white">
+                <div className="bg-gray-900 pb-3 my-3 mx-5 text-white">
                   <img 
                     src={image.url} 
                     alt={`Image ${index}`}
