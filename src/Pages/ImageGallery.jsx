@@ -134,14 +134,14 @@ function App() {
             searchTerm === ''
           ) {
             return (
-              <li className="mx-6 mb-6 px-2" key={image.id}>
+              <li className="mx-8 mb-6 px-2" key={image.id}>
                 <div className="bg-gray-900 pb-3 my-10 text-white">
                   <img 
                     src={image.url} 
                     alt={`Image ${index}`}
-                    className="rounded-[15px] mx-auto w-48 h-[250px]"
+                    className="rounded-[15px] mx-auto w-[70%] h-[250px]"
                   />
-                 <p className='relative bottom-16 uppercase text-center py-2 px-6 bg-amber-400 w-[80%] rounded mx-auto text-lg font-medium'>{image.title}</p>
+                 <p className='relative bottom-16 uppercase text-center py-2 px-6 bg-amber-400 w-48 rounded mx-auto text-lg font-medium'>{image.title}</p>
                 </div>
               </li>
             );
