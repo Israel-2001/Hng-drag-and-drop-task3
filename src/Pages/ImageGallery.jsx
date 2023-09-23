@@ -22,7 +22,7 @@ import Sortable from 'sortablejs';
       id: 3, 
       url: 'https://images.unsplash.com/photo-1692911470431-9820cc52c01c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxM3x8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60', 
       title: 'Stair',
-      tags: 'stair'
+      tags: 'staircase'
     },
     { 
       id: 4, 
@@ -45,7 +45,7 @@ import Sortable from 'sortablejs';
     { 
       id: 7, 
       url: 'https://images.unsplash.com/photo-1694843690023-3d936b2e83b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=700&q=60', 
-      title: 'bottles',
+      title: 'bottle',
       tags: 'bottles'
     },
     { 
@@ -58,12 +58,12 @@ import Sortable from 'sortablejs';
       id: 9, 
       url: 'https://images.unsplash.com/photo-1695026513693-451e1aac043f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80', 
       title: 'Art',
-      tags: 'Image'
+      tags: 'Art'
     },
     { 
       id: 10, 
       url: 'https://images.unsplash.com/photo-1695051626405-e6a288c882d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw3fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=700&q=60',
-      title: 'Brick',
+      title: 'Art',
       tags: 'Art'
     },
     // Add more images here
@@ -125,7 +125,8 @@ function App() {
       <h1 className='mt-3 text-center text-white text-3xl font-semibold'>Image Gallery</h1>
       <ul 
         ref={sortableContainer}
-        className='grid grid-cols-2 md:grid-cols-custom justify-center items-center'  
+        className='sm:grid sm:grid-rows-1 md:grid-cols-2 lg:grid-cols-2 
+        xl:grid-cols-3 justify-center items-center'  
       >
         {initialImages.map((image, index) => {
         if (
@@ -134,13 +135,13 @@ function App() {
           ) {
             return (
               <li className="mx-8 mb-6 px-2" key={image.id}>
-                <div className="bg-gray-900 pb-3 my-3 mx-5 text-white">
+                <div className="bg-gray-900 pb-3 my-10 text-white">
                   <img 
                     src={image.url} 
                     alt={`Image ${index}`}
-                    className="rounded-[15px] mx-auto w-[100%] h-[250px] grid grid-cols-2 md:grid-cols-custom"
+                    className="rounded-[15px] mx-auto w-[70%] h-[250px]"
                   />
-                 <p className='relative bottom-16 uppercase text-center py-2 px-6 bg-amber-400 w-[90%] rounded mx-auto text-lg font-medium'>{image.title}</p>
+                 <p className='relative bottom-16 uppercase text-center py-2 px-6 bg-amber-400 w-48 rounded mx-auto text-lg font-medium'>{image.title}</p>
                 </div>
               </li>
             );
